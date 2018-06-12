@@ -1,0 +1,33 @@
+﻿<div class="col-sm-4 mrg sidebar">
+    <div class="card">
+        <h4 class="title">Search</h4>
+        <div class="card-body">
+            <div class="text">
+                @using (Html.BeginForm("Search", "Home", FormMethod.Get, new { @class = "form-search" }))
+                {
+                    <input type="text" class="search" placeholder="Search.." name="searching" autocomplete="off">
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h4 class="title">Share</h4>
+        <div class="card-body">
+            <div class="text sharethis-inline-share-buttons"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h4 class="title">About Us</h4>
+        <div class="card-body">
+            <div class="text about">
+                Our world's most vibrant places.
+                <br /><br />
+                If you're looking for a good source to discover our universe, you are in the right place.
+                <br /><br />
+                Daily publications will take you to the most distant, wild and spectacular corners of space and time.
+            </div>
+        </div>
+    </div>
+</div>

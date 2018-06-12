@@ -1,0 +1,72 @@
+﻿@model IEnumerable<SpaceMe.Models.Post>
+@{
+    Layout = null;
+    ViewBag.Title = "Space Me";
+}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Images/i1.ico" rel="shortcut icon" type="image/x-icon" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="parallax">
+        <div class="dmiddle">
+            <h1 class="spaceme">Space Me</h1>
+            <small class="text-muted">eternal things</small>
+        </div>
+    </div>
+    <div class="clouds"></div>
+
+    <div class="container body-content content">
+        <h5 class="motto">
+            <span class="tag">All of time and space and its contents</span>
+        </h5>
+        <div class="col-sm-8 mainmrg">
+            @foreach (var item in Model)
+            {
+                <div class="card">
+                    @Html.Raw("<img class='card-img-top' style='width:100%;' src=\"data:image/jpeg;base64,"
+                                                                         + Convert.ToBase64String(item.Image) + "\" />")
+                    <div class="card-body card-content">
+                        <h4 class="card-title">@Html.DisplayFor(i => item.Title)</h4>
+                        <p class="date"><span class="glyphicon glyphicon-calendar"></span>@Html.DisplayFor(i => item.PostedOn)</p>
+                        <p class="card-text">@Html.DisplayFor(i => item.Description)</p>
+                        <p class="text-center">
+                            <a href="@Url.Action("Post", "Home", new { id = item.Id })" class="btn btn-default br0">
+                                Read more <span class="glyphicon glyphicon-fire"></span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            }
+            <div>
+                @if (ViewBag.Page < ViewBag.MaxPage)
+                {
+                    <a href="@Url.Action("Index", new { page = ViewBag.Page + 1 })" class="btn btn-default pagbtn br0">
+                        <span class="glyphicon glyphicon-chevron-left"></span> Older
+                    </a>
+                }
+                @if (ViewBag.Page > 0)
+                {
+                    <a href="@Url.Action("Index", new { page = ViewBag.Page - 1 })" class="btn btn-default pagbtn br0 newbtn">
+                        Newer <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                }
+            </div>
+        </div>
+        @Html.Partial("SideBar")
+    </div>
+
+    <footer>
+        <p>&copy; Nature. Billions of years ago – @DateTime.Now.Year</p>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="//platform-api.sharethis.com/js/sharethis.js#property=5b1549eb467fef00119b9c31&product=inline-share-buttons"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Invite new admin";
+}
+
+<div class="adminform">
+    <h4 class="text-center">@ViewBag.Title</h4>
+    <hr />
+    <div class="col-md-offset-4 col-md-5">
+        @using (Html.BeginForm("NewAdmin", "Admin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.Label("Email", new { @class = "col-md-2 control-label" })
+                <div class="col-md-6">
+                    @Html.TextBox("Email", null, new { @class = "form-control br0" })
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                <div class="col-md-offset-2 col-md-6">
+                    <input type="submit" class="btn btn-default regbtn br0" value="Send details" />
+                </div>
+            </div>
+        }
+    </div>
+</div>

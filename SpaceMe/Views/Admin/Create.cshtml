@@ -1,0 +1,70 @@
+﻿@model SpaceMe.Models.Post
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="adminform">
+    <h4 class="text-center">Create new post</h4>
+    <hr />
+    @using (Html.BeginForm("Create", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal col-md-offset-1">
+            <div class="text-danger text-center customerr">@Html.ValidationMessage("CreateErr")</div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control br0" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    <div class="editor-field">
+                        <input type="file" name="uploadImage" />
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control br0" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PostedOn, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.PostedOn, "{0:dd-MM-yyyy}", new { htmlAttributes = new { @class = "form-control br0", @type = "date" } })
+                    @Html.ValidationMessageFor(model => model.PostedOn, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.TextAreaFor(model => model.Content, new { @class = "form-control br0", id = "editor" })
+                    @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <div class="col-md-offset-2 col-md-8">
+                <input type="submit" class="btn btn-default regbtn br0" value="Create" />
+            </div>
+        </div>
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</div>
+

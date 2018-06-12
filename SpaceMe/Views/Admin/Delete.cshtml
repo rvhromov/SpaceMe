@@ -1,0 +1,40 @@
+﻿@model SpaceMe.Models.Post
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="adminform">
+    <h3 class="text-center">Are you sure you want to delete this post?</h3>
+    <hr />
+    <div class="container col-md-offset-1 col-md-10">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Id)</th>
+                    <th>@Html.DisplayNameFor(model => model.Title)</th>
+                    <th>@Html.DisplayNameFor(model => model.Description)</th>
+                    <th>@Html.DisplayNameFor(model => model.PostedOn)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Html.DisplayFor(model => model.Id)</td>
+                    <td>@Html.DisplayFor(model => model.Title)</td>
+                    <td>@Html.DisplayFor(model => model.Description)</td>
+                    <td>@Html.DisplayFor(model => model.PostedOn)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group text-center">
+                <input type="submit" class="btn btn-danger regbtn br0" value="Delete" />
+            </div>
+        }
+    </div>
+</div>
+

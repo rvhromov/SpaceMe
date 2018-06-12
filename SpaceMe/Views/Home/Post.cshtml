@@ -1,0 +1,69 @@
+﻿@model SpaceMe.Models.Post
+
+@{
+    Layout = null;
+    ViewBag.Title = "Post";
+}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Images/i1.ico" rel="shortcut icon" type="image/x-icon" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <h5 class="postmotto">
+        <span class="tag">All of time and space and its contents</span>
+    </h5>
+    <div class="container body-content content">
+        <div class="col-sm-8 mrg topmrg">
+            <div class="card postcontent">
+                @Html.Raw(Model.Content)
+                <p class="text-center">
+                    <a href="@Html.Encode(Request.UrlReferrer.ToString())" class="btn btn-default br0">
+                        <span class="glyphicon glyphicon-chevron-left"></span> Go back
+                    </a>
+                </p>
+                <div id="disqus_thread"></div>
+            </div>
+        </div>
+        <div class="topmrg">
+            @Html.Partial("SideBar")
+        </div>
+    </div>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <footer>
+        <p>&copy; Nature. Billions of years ago – @DateTime.Now.Year</p>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script>
+        $(document).ready(function () {
+            $("img").addClass("img-responsive");
+            $("table").wrap("<div class='table-responsive'></div>")
+        });
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function () {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://space-me.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <script id="dsq-count-scr" src="//space-me.disqus.com/count.js" async></script>
+    <script src="//platform-api.sharethis.com/js/sharethis.js#property=5b1549eb467fef00119b9c31&product=inline-share-buttons"></script>
+</body>
+</html>
+

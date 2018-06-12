@@ -1,0 +1,354 @@
+﻿body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #f7f5f2;
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+
+.parallax {
+    background-image: url("Images/spacex.jpg");
+    height: 75%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.spaceme {
+    font: 400 15px/1.8 "Lato", sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+.dmiddle {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px 80px !important;
+    border: 5px solid #fff !important;
+    text-align: center !important;
+    letter-spacing: 10px;
+    color: #fff;
+    z-index: 0;
+}
+
+@keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-webkit-keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-moz-keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-ms-keyframes move-clouds-back {
+    from {
+        background-position: 0;
+    }
+
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+.clouds {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.clouds {
+    background: transparent url(Images/clouds.png) repeat top center;
+    z-index: 3;
+    max-height: 75%;
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
+}
+
+.motto {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    text-align: center !important;
+}
+
+.tag {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 8px;
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Segoe UI",Arial,sans-serif;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+footer {
+    color: #000 !important;
+    background-color: #e7e7e7 !important;
+    padding-top: 38px !important;
+    padding-bottom: 28px !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    font-family: "Segoe UI",Arial,sans-serif;
+    letter-spacing: 2px;
+    z-index: 4;
+}
+
+.card {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    color: #000 !important;
+    background-color: #fff !important;
+    margin-bottom: 32px !important;
+}
+
+.mrg {
+    margin-bottom: 40px;
+}
+
+.mainmrg {
+    margin-bottom: 30px;
+}
+
+.content {
+    max-width: 100% !important;
+    background-color: #f7f5f2;
+    z-index: 5;
+    position: relative;
+}
+
+.card-content {
+    padding: 10px 20px;
+}
+
+.card-title {
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 24px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.title {
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 24px;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.card-text {
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.text {
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 16px;
+    padding: 20px;
+    margin: 0;
+}
+
+.btn-default {
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 16px;
+    color: #000;
+    background-color: #fff;
+}
+
+.pagbtn {
+    font-size: 18px;
+}
+
+    .pagbtn:hover {
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+        background-color: #fff;
+        border-color: #cccccc;
+        color: #000;
+    }
+
+.br0 {
+    border-radius: 0px !important;
+}
+
+.date {
+    font-size: 15px;
+    color: #777777;
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+
+.text-muted {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.adminform {
+    margin-top: 70px;
+}
+
+.regbtn {
+    text-transform: none;
+    width: 150px;
+    margin: 20px 0;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+}
+
+hr {
+    margin-bottom: 30px;
+}
+
+.err {
+    padding-bottom: 20px;
+}
+
+.editable-img {
+    padding-bottom: 10px;
+}
+
+.topmrg {
+    margin-top: 40px;
+}
+
+.postcontent {
+    padding: 20px 30px;
+}
+
+.postmotto {
+    padding-top: 40px !important;
+    text-align: center !important;
+}
+
+.glyphicon-fire {
+    color: goldenrod;
+}
+
+.glyphicon-calendar {
+    padding-right: 5px;
+}
+
+.newbtn {
+    float: right;
+}
+
+.glyphicon-chevron-left {
+    font-size: 12px;
+}
+
+.glyphicon-chevron-right {
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+    .dmiddle {
+        padding: 10px 40px !important;
+        letter-spacing: 7px;
+    }
+
+    .sidebar {
+        clear: both;
+    }
+
+    .newbtn {
+        float: right;
+        margin-bottom: 30px;
+    }
+}
+
+.search {
+    border: 0;
+    border-bottom: solid 2px #000;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+    height: 50px;
+}
+
+    .search:focus {
+        border-bottom: solid 2px #0094ff;
+    }
+
+.sharethis-inline-share-buttons {
+    padding: 20px;
+}
+
+.about {
+    text-align: justify;
+    color: #000;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.error {
+    background-image: url("Images/b4.png");
+    font-family: "Segoe UI",Arial,sans-serif;
+    letter-spacing: 2px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 26px;
+    color: #fff;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.errimg {
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+}
+
+.msg {
+    margin: 0 auto;
+}
+
+.code {
+    font-size: 120px;
+    letter-spacing: 15px;
+    color: #fff;
+}
+
+iframe {
+    width: 100%;
+}

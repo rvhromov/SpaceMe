@@ -1,0 +1,40 @@
+﻿@model SpaceMe.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Log In";
+}
+
+<div class="adminform">
+    <h4 class="text-center">Use your email to log in</h4>
+    <hr />
+    <div class="text-danger text-center err">@Html.ValidationMessage("LoginErr")</div>
+    <div class="col-md-offset-4 col-md-5">
+        @using (Html.BeginForm("Login", "Admin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control br0" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                <div class="col-md-6">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control br0" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <div class="col-md-offset-2 col-md-6">
+                    <input type="submit" class="btn btn-default regbtn br0" value="Log In" />
+                </div>
+            </div>
+        }
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    </div>
+</div>
+
